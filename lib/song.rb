@@ -51,17 +51,17 @@ class Song
   end
   
   def self.new_from_filename(file)
-    c = self.new 
-    c.name = file.split(/[^a-zA-Z\s]|\s-\s/)[1] 
-    c.artist_name = file.split(/[^a-zA-Z\s]|\s-\s/)[0]
-    c
+    new = self.new_by_name(file)
+    new.name = file.split(/[^a-zA-Z\s]|\s-\s/)[1] 
+    new.artist_name = file.split(/[^a-zA-Z\s]|\s-\s/)[0]
+    new
     #binding.pry
  end
  
 
   def self.create_from_filename(file)
-     new = self.create_by_name(file)
-   new.name = file.split(/[^a-zA-Z\s]|\s-\s/)[1] 
+    new = self.create_by_name(file)
+    new.name = file.split(/[^a-zA-Z\s]|\s-\s/)[1] 
     new.artist_name = file.split(/[^a-zA-Z\s]|\s-\s/)[0]
     new.save
   end
